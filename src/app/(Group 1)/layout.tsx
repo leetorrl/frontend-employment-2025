@@ -1,10 +1,14 @@
-import './../globals.css';
+'use client';
+import { ReactNode } from 'react';
+import useAppStore from '../stores/store'; 
+import '../globals.css';
+export default function Layout({ children }: { children: ReactNode }) {
+  const { isDarkMode } = useAppStore(); 
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko">
-      <body>
-        <header>그룹1 레이아웃</header>
+    <html lang="en" className={isDarkMode ? 'dark' : ''}>
+      <body className={isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}>
+        <h1>Group 1 레이아웃입니다.</h1>
         {children}
       </body>
     </html>
