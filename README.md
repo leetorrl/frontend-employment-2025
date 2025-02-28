@@ -113,3 +113,64 @@
 
 ![example7](public/example7.png)
 
+
+```
+WEFACTORY
+├─ .prettierrc
+├─ components.json
+├─ eslint.config.mjs
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ pnpm-lock.yaml
+├─ postcss.config.mjs
+├─ public
+│  ├─ example1.png
+│  ├─ example2.png
+│  ├─ example3.png
+│  ├─ example4.png
+│  ├─ example5.png
+│  ├─ example6.png
+│  ├─ example7.png
+│  └─ example8.png
+├─ README.md
+├─ src
+│  ├─ app
+│  │  ├─ (Group 1)
+│  │  │  ├─ layout.tsx
+│  │  │  ├─ page.tsx
+│  │  │  └─ pokemons
+│  │  │     ├─ page.tsx
+│  │  │     └─ [page]
+│  │  │        └─ page.tsx
+│  │  ├─ (Group 2)
+│  │  │  ├─ layout.tsx
+│  │  │  ├─ sign-in
+│  │  │  │  └─ page.tsx
+│  │  │  └─ sign-up
+│  │  │     └─ page.tsx
+│  │  ├─ (Group 3)
+│  │  │  ├─ admin
+│  │  │  │  ├─ page.tsx
+│  │  │  │  └─ users
+│  │  │  │     └─ page.tsx
+│  │  │  └─ layout.tsx
+│  │  ├─ api
+│  │  │  └─ pokemon
+│  │  │     └─ route.ts
+│  │  ├─ components
+│  │  │  ├─ PokemonUI.tsx
+│  │  │  └─ ThemeProvider.tsx
+│  │  ├─ favicon.ico
+│  │  ├─ globals.css
+│  │  └─ stores
+│  │     └─ store.tsx
+│  ├─ configs
+│  │  └─ tanstack-query
+│  │     └─ provider.tsx
+│  └─ lib
+│     └─ utils.ts
+├─ tailwind.config.ts
+└─ tsconfig.json
+
+```

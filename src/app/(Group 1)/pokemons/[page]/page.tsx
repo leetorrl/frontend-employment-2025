@@ -41,12 +41,12 @@ export default async function PokemonPage({ params }: { params: { page?: string 
     <ThemeProvider>
       <section className="flex justify-center items-center w-full">
         <div className="w-[2540px] overflow-x-auto">
-          <h1 className="text-center text-2xl mb-4">Pokémon List (Page {validPage})</h1>
+          <h1 className="text-center text-2xl mb-4 font-bold">Pokémon List (Page {validPage})</h1>
 
           <div className="grid grid-cols-4 gap-4 min-w-max">
-            {pokemons.map((pokemon) => (
+            {pokemons.map((pokemon: Pokemon) => (
               <div key={pokemon.name} className="flex flex-col items-center mb-6">
-                <div className="border-2 flex items-center justify-center w-[300px] h-[400px]">
+                <div className="border-2 flex items-center justify-center w-[600px] h-[800px]">
                   <Image
                     src={pokemon.image || "/example8.png"}
                     alt={pokemon.name}

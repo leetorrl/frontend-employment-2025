@@ -75,7 +75,7 @@ export default async function Pokemons({ params }: { params?: { page?: string } 
                 return (
                   <Link key={pageNumber} href={`/pokemons/${pageNumber}`}>
                     <button
-                      className={`px-4 py-2 border rounded-lg ${
+                      className={`px-4 py-2 border rounded-lg  ${
                         currentPage === pageNumber ? "bg-blue-500 text-white" : "bg-white text-black"
                       }`}
                     >
