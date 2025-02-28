@@ -31,11 +31,9 @@ export default async function PokemonPage({ params }: { params: { page?: string 
   const totalPokemons = 1298;
   const totalPages = Math.ceil(totalPokemons / 20);
 
-  // 페이지네이션 범위 계산 (1~10, 11~20, ...)
   const pageRangeStart = Math.floor((validPage - 1) / 10) * 10 + 1;
   const pageRangeEnd = Math.min(pageRangeStart + 9, totalPages);
 
-  // 이전, 다음 버튼을 위한 범위 계산
   const prevRangeStart = Math.max(pageRangeStart - 10, 1);
   const nextRangeStart = Math.min(pageRangeStart + 10, totalPages - 9);
 
@@ -64,7 +62,7 @@ export default async function PokemonPage({ params }: { params: { page?: string 
 
           <div className="text-center mt-4">
             <div className="flex justify-center gap-2">
-              {/* 첫 페이지 버튼 */}
+    
               <Link href={`/pokemons/1`}>
                 <button
                   className="px-4 py-2 border rounded-lg bg-white text-black"
@@ -73,7 +71,6 @@ export default async function PokemonPage({ params }: { params: { page?: string 
                 </button>
               </Link>
 
-              {/* 이전 페이지 범위 버튼 */}
               <Link href={`/pokemons/${prevRangeStart}`}>
                 <button
                   className="px-4 py-2 border rounded-lg bg-white text-black"
@@ -82,7 +79,6 @@ export default async function PokemonPage({ params }: { params: { page?: string 
                 </button>
               </Link>
 
-              {/* 페이지 번호 1~10 */}
               {Array.from({ length: pageRangeEnd - pageRangeStart + 1 }, (_, index) => {
                 const pageNumber = pageRangeStart + index;
                 return (
@@ -98,7 +94,6 @@ export default async function PokemonPage({ params }: { params: { page?: string 
                 );
               })}
 
-              {/* 다음 페이지 범위 버튼 */}
               <Link href={`/pokemons/${nextRangeStart}`}>
                 <button
                   className="px-4 py-2 border rounded-lg bg-white text-black"
@@ -107,7 +102,6 @@ export default async function PokemonPage({ params }: { params: { page?: string 
                 </button>
               </Link>
 
-              {/* 마지막 페이지 버튼 */}
               <Link href={`/pokemons/${totalPages}`}>
                 <button
                   className="px-4 py-2 border rounded-lg bg-white text-black"
