@@ -48,7 +48,7 @@ export default async function PokemonPage({ params }: { params: { page?: string 
           <div className="grid grid-cols-4 gap-4 min-w-max">
             {pokemons.map((pokemon) => (
               <div key={pokemon.name} className="flex flex-col items-center mb-6">
-                <div className="border-2 flex items-center justify-center w-[600px] h-[800px]">
+                <div className="border-2 flex items-center justify-center w-[300px] h-[400px]">
                   <Image
                     src={pokemon.image || "/example8.png"}
                     alt={pokemon.name}
