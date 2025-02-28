@@ -17,9 +17,9 @@ export default function Home() {
   }, [setIsDarkMode]);
 
     return <section>
-      <div className={isDarkMode ? "bg-black text-white" : "bg-white text-black"}>
+      <div >
         <h1>로그인웹</h1>
-  <Link href="/sign-up" className={isDarkMode ? "text-white": "link" }>회원가입 라우터</Link>
+  <Link href="/sign-up" className={isDarkMode ? "text-red-500 font-bold": "link" }>회원가입 라우터</Link>
       </div>
     </section>;
   }

@@ -1,8 +1,11 @@
 import ThemeProvider from "../components/ThemeProvider";
-import "../globals.css";
+import { ReactNode } from "react";
+import '../globals.css'
+interface LayoutProps {
+  children: ReactNode;
+}
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-
+export default function Group1Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body>

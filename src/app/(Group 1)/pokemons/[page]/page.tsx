@@ -8,10 +8,16 @@ interface Pokemon {
 }
 
 async function fetchPokemons(offset: number) {
-  const res = await fetch(`http://localhost:3000/api/pokemon?limit=20&offset=${offset}`);
-  const data = await res.json();
-  return data;
-}
+    try {
+      const limit = 20;
+      const res = await fetch(`http://localhost:3000/api/pokemon?limit=${limit}&offset=${offset}`);
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+      return [];  
+    }
+  }
 
 export async function generateStaticParams() {
   const totalPokemons = 1298;
@@ -21,7 +27,7 @@ export async function generateStaticParams() {
 }
 
 export default async function PokemonPage({ params }: { params: { page?: string } }) {
-
+    console.log('Current Page:', params.page); 
   const currentPage = params.page ? parseInt(params.page, 10) : 1;
   const validPage = Math.max(1, currentPage);
 
@@ -41,7 +47,7 @@ export default async function PokemonPage({ params }: { params: { page?: string 
     <ThemeProvider>
       <section className="flex justify-center items-center w-full">
         <div className="w-[2540px] overflow-x-auto">
-          <h1 className="text-center text-2xl mb-4 font-bold">Pokémon List (Page {validPage})</h1>
+          <h1 className="text-center text-2xl mb-4 ">Pokémon List (Page {validPage})</h1>
 
           <div className="grid grid-cols-4 gap-4 min-w-max">
             {pokemons.map((pokemon: Pokemon) => (
@@ -112,8 +118,8 @@ export default async function PokemonPage({ params }: { params: { page?: string 
             </div>
           </div>
 
-          <div className="text-center mt-4">
-            <Link href="/sign-in">로그인 라우터</Link>
+          <div className="text-center my-10">
+            <Link href="/sign-in" className="font-bold text-2xl">로그인 라우터</Link>
           </div>
         </div>
       </section>

@@ -49,7 +49,7 @@ export default function Home() {
 
   return (
     <section>
-      <div className={isDarkMode ? "dark text-white" : "bg-white text-black"}>
+      <div   >
         <div>
           <h1 className="text-2xl font-bold flex justify-center items-center h-[200px] ">Home</h1>
           <div className="">
@@ -86,7 +86,7 @@ export default function Home() {
         <div className="flex justify-center" >
         <Link
           href="/pokemons"
-          className={isDarkMode ? "text-white font-bold " : "link "}
+          className={isDarkMode ? "text-red-500 font-bold " : "link "}
         >
           포켓몬 라우터
         </Link>

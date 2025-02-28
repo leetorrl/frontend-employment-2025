@@ -16,6 +16,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   }, [setIsDarkMode]);
 
   useEffect(() => {
+    
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("darkMode", "true");
