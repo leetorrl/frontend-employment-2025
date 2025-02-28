@@ -19,7 +19,7 @@ export default function Home() {
     return <section>
        <div className={isDarkMode ? "bg-black text-white" : "bg-white text-black"}>
         <h1>회원가입웹</h1>
-  <Link href="/admin">관리자 라우터</Link>
+  <Link href="/admin" className={isDarkMode ? "text-white": "link" }>관리자 라우터</Link>
       </div>
     </section>;
   }

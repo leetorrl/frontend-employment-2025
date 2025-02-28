@@ -55,7 +55,10 @@ export default function Home() {
         <button onClick={upcount}>up!</button>
         <button onClick={downcount}>down!</button>
         <br />
-        <Link href="/pokemons" className="bg-yellow-500">
+        <Link
+          href="/pokemons"
+          className={isDarkMode ? "text-white" : "link"}
+        >
           포켓몬 라우터
         </Link>
       </div>

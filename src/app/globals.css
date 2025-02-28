@@ -117,3 +117,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.link {
+  @apply font-bold text-blue-500;
+}
