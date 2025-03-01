@@ -8,7 +8,7 @@ Link = '/' 의 home page.tsx 에서 count를 올려도 useEffect에서 count 값
 
 포켓몬api를 접해보는 것은 이번이 처음이어서 총 리스트가 궁금하여 페이지 네이션을 구현해 보았습니다.
 중간에 자료가 없는 이미지는 이번 시험에 제외된 example8.png 이미지로 나타나도록 하였습니다. 
-맨끝인 http://3.36.69.54:5273/pokemons/65 를 참고하시면 될 것 갔습니다.
+맨끝인 http://pokomen.leetorrl.store/pokemons/65 를 참고하시면 될 것 갔습니다.
 
 
 이미지 크기는 예제에 적혀있던 사이즈를 참고하여 w-600 h-800으로 해놓았습니다.(좀 큰거 같습니다)
@@ -16,5 +16,7 @@ Link = '/' 의 home page.tsx 에서 count를 올려도 useEffect에서 count 값
 타입 지정은 모두 적용하지 못하였습니다.
 
 테스트 결과물은 도커허브에 이미지 등록 하여 aws를 통해 주소를 배포하고 이력서에 첨부하였습니다.
+
+주소는 http://pokomen.leetorrl.store/로 접속하시면 됩니다.
 
 
