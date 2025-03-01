@@ -12,7 +12,7 @@ export default function Group3Layout({ children }: LayoutProps) {
       <body className="min-h-screen flex flex-col">
         <ThemeProvider>
         <header className="Group3-header w-full text-left dark:bg-purple-500">
-  <div className="flex justify-between items-center p-4">
+  <div className="flex justify-between items-center p-0">
     <h1>Group 3 레이아웃입니다.</h1>
     <nav className="flex gap-4">
       <Link href="/" className="text-lg">|Home|</Link>

@@ -13,7 +13,7 @@ export default function Group2Layout({ children }: LayoutProps) {
       <body className="min-h-screen flex flex-col">
         <ThemeProvider>
         <header className="Group2-header w-full text-left dark:bg-yellow-500">
-  <div className="flex justify-between items-center p-4">
+  <div className="flex justify-between items-center p-0">
     <h1>Group 2 레이아웃입니다.</h1>
     <nav className="flex gap-4">
       <Link href="/" className="text-lg">|Home|</Link>

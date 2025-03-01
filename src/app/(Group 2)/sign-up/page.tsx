@@ -17,8 +17,8 @@ export default function Home() {
   }, [setIsDarkMode]);
 
     return <section>
-       <div>
-        <h1>회원가입웹</h1>
+       <div className='h-[400px]'>
+        <h1 className='text-2xl font-bold'>회원가입웹</h1>
   <Link href="/admin" className={isDarkMode ? "text-red-500 font-bold": "link" }>관리자 라우터</Link>
       </div>
     </section>;

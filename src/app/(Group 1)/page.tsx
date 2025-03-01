@@ -62,8 +62,8 @@ export default function Home() {
 
   return (
     <section>
-      <div>
-        <div>
+      <div className="h-full flex justify-center items-center">
+        <div className="">
           <h1 className="text-2xl font-bold flex justify-center items-center h-[200px]">Home</h1>
           <div>
             <h1 className={`flex justify-center items-center h-[50px] ${count >= 5 ? "text-2xl font-bold" : ""}`}>

@@ -107,7 +107,7 @@ export default async function Pokemons({ params }: { params?: { page?: string } 
           </div>
 
           <div className="text-center my-10">
-            <Link href="/sign-in" className="font-bold text-2xl dark:text-red-500">로그인 라우터</Link>
+            <Link href="/sign-in" className="link font-bold text-2xl dark:text-red-500">로그인 라우터</Link>
           </div>
         </div>
       </section>
