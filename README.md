@@ -1,114 +1,18 @@
-1차 테스트 진행중 입니다...
+1차 테스트 완료 2025-03-01 이동현
 
-# 2025년 위팩토리 프론트엔드 개발자 채용 테스트
+테스트 소감 : usd client를 사용하지 않고 다크모드 적용하는데 있어 이슈가 많아 책과 구글링 gpt를 뒤져가며 많은 시간을 투자하였습니다.
 
-위팩토리 프론트엔드 개발자 채용 1차 온라인 테스트에 참여해주셔서 감사합니다.
-온라인 테스트는 아래 표기된 기간동안 진행되며 지원자분께서 제출해주신 과제를 검토 후 합격하신 분들께는 `2차 오프라인 테스트 및 면접` 일정을 안내해드리도록 하겠습니다.
+컴포넌트 폴더내에 ThemeProvider.tsx를 생성하여 전역 다크모드를 관리하도록 지시를 하였지만 pokemons 페이지의 새로고침 및 주소창을 통해 서버 리로드 접속시 렌더링 이슈가 일어나 다크모드가 적응 안되는 문제가 발생하였습니다.
 
-<br />
+Link = '/' 의 home page.tsx 에서 count를 올려도 useEffect에서 count 값을 변경하였을때 바로 로컬스토리지와 document.documentElement.classList를 업데이트하지 않은 것이 원인이였고 pages폴더내 _document.tsx 파일을 생성하여 렌더링 후 DOM을 즉시 업데이트 하여야 새로고침 렌더링 이슈를 해결 할 수 있다고 하여 참고를 많이하고 여기저기 코드를 적용해본 결과 다크모드 렌더링 이슈를 해결 할 수 있었습니다.
 
-전체 면접 일정이 종료된 이후 해당 repository는 비공개 처리 될 예정이며 1차 테스트에 지원해주신 모든 분들께 순차적으로 제출해주신 과제에 대한 피드백을 드리고자 하니 포기하지 마시고 적극적인 참여 부탁드립니다.
+포켓몬api를 접해보는 것은 이번이 처음이어서 총 리스트가 궁금하여 페이지 네이션을 구현해 보았습니다.
+중간에 자료가 없는 이미지는 이번 시험에 제외된 example8.png 이미지로 나타나도록 하였습니다. 
+맨끝인 http://localhost:3000/pokemons/65 를 참고하시면 될 것 갔습니다.
 
-<br />
-<br />
 
-진행 방식
+이미지 크기는 예제에 적혀있던 사이즈를 참고하여 w-600 h-800으로 해놓았습니다.(좀 큰거 같습니다)
+타입 지정은 모두 적용하지 못하였습니다.
+테스트 결과물은 도커를 통해 이미지화 하여 aws와 가비아를 통해 도메인을 구현한 뒤 이력서에 주소를 첨부하였습니다.
 
-- 해당 repository를 개인 github으로 fork하여 아래 요구사항들을 적용합니다.
 
-<br />
-<br />
-
-## 1. 라우팅 구성 정확도 ( 10점 )
-
-### 1-1. 아래 URL로 접속 가능한 페이지들을 구성하세요. ( 5점 )
-
-[참고 문서: https://nextjs.org/docs/app/getting-started/layouts-and-pages](https://nextjs.org/docs/app/getting-started/layouts-and-pages)
-
-- /
-- /sign-in
-- /sign-up
-- /pokemons
-- /admin
-- /admin/users
-
-<br />
-
-### 1-2. 아래 그룹별로 서로 다른 레이아웃을 적용하세요. ( 5점 )
-
-[참고 문서: https://nextjs.org/docs/app/building-your-application/routing/route-groups](https://nextjs.org/docs/app/building-your-application/routing/route-groups)
-
-- Group 1
-  - /
-  - /pokemons
-- Group 2
-  - /sign-in
-  - /sign-up
-- Group 3
-
-  - /admin
-  - /admin/users
-
-<br />
-
-- 결과 예시
-
-  ![example1](public/example1.png) <br />
-  ![example2](public/example2.png) <br />
-  ![example3](public/example3.png) <br />
-  ![example4](public/example4.png) <br />
-  ![example5](public/example5.png) <br />
-  ![example6](public/example6.png)
-
-<br />
-<br />
-
-## 2. 상태관리 및 Rest API 호출 적절성 ( 40점 )
-
-### 2-1. state 사용 테스트 ( 10점 )
-
-- number 타입의 `count` state를 구현하세요. ( 2점 )
-
-- `count`값을 1 증가시키는 버튼을 구현하세요. ( 4점 )
-
-  - count 값이 10 초과 하지 않게 합니다.
-
-- `count`값을 1 감소시키는 버튼을 구현하세요. ( 4점 )
-  - count 값이 0 미만이 되지 않게 합니다.
-
-<br />
-
-### 2-2. zustand로 전역 상태 관리 ( 15점 )
-
-- 2-1. 문항에서 만든 `count`값이 5 이상일때 다크모드, 5 미만일때 라이트모드 될 수 있게 구현하세요. ( 5점 )
-
-  - 다크모드에서는 화면에 보이는 ui요소들의 배경색, 글자색이 반전되게 합니다.
-
-- localStorage를 활용하여 `count`값과 다크모드, 라이트모드 상태를 새로고침 후에도 유지되게 구현합니다. ( 10점 )
-  - `count` 상태를 zustand로 변경하지 않습니다.
-
-<br />
-
-### 2-3. http 호출 및 응답 데이터 상태 관리 ( 15점 )
-
-> 제약사항 1. page.tsx, layout.tsx에 'use client' 지시어를 사용하지 않습니다.
-
-### REST API 명세
-
-1\) 엔드포인트
-
-- URL: http://localhost:3000/api/pokemon
-
-2\) 요청 파라미터
-| 이름 | 타입 | 기본값 | 설명 |
-|---|---|---|---|
-| limit | number | 20 | 가져올 포켓몬 개수(1 이상 권장) |
-| offset | number | 0 | 이미 확인한 포켓몬 수(시작 지점) |
-
-예\) GET http://localhost:3000/api/pokemon?limit=20&offset=0
-
----
-
-위 REST API 명세를 바탕으로 데이터를 호출하는 custom hook을 구현하고 /pokemons 페이지에 예시와 같이 ui를 구현합니다.
-
-![example7](public/example7.png)
