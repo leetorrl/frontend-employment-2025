@@ -17,6 +17,6 @@ Link = '/' 의 home page.tsx 에서 count를 올려도 useEffect에서 count 값
 
 테스트 결과물은 도커허브에 이미지 등록 하여 aws를 통해 주소를 배포하고 이력서에 첨부하였습니다.
 
-주소는 http://pokomen.leetorrl.store/로 접속하시면 됩니다.
+주소는 http://pokomen.leetorrl.store/ 로 접속하시면 됩니다.
 
 
