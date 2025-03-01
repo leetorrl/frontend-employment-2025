@@ -19,6 +19,8 @@ export default async function Pokemons({ params }: { params?: { page?: string } 
   const offset = (currentPage - 1) * 20;
   const initialPokemons = await fetchPokemons(offset);
 
+  // const totalcountp = await fetch(`https://pokeapi.co/api/v2/pokemon?${query.toString()}`);
+
   const totalPokemons = 1298;
   const totalPages = Math.ceil(totalPokemons / 20);
 
@@ -32,7 +34,7 @@ export default async function Pokemons({ params }: { params?: { page?: string } 
     <ThemeProvider>
       <section className="flex justify-center items-center w-full">
         <div className="w-[2540px] overflow-x-auto">
-          <h1 className="text-center text-2xl mb-4 font-bold">Pokémon List</h1>
+          <h1 className="text-center text-2xl my-10 font-bold">Pokémon List</h1>
 
           <div className="grid grid-cols-4 gap-4 min-w-max">
             {initialPokemons.map((pokemon: Pokemon) => (
@@ -105,7 +107,7 @@ export default async function Pokemons({ params }: { params?: { page?: string } 
           </div>
 
           <div className="text-center my-10">
-            <Link href="/sign-in" className="font-bold text-2xl">로그인 라우터</Link>
+            <Link href="/sign-in" className="font-bold text-2xl dark:text-red-500">로그인 라우터</Link>
           </div>
         </div>
       </section>

@@ -1,30 +1,20 @@
 "use client";
 
 import { useEffect } from "react";
-import useAppStore from "../stores/store";
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const { isDarkMode, setIsDarkMode } = useAppStore();
-
   useEffect(() => {
     const savedTheme = localStorage.getItem("darkMode");
-    if (savedTheme === "true") {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
-  }, [setIsDarkMode]);
 
-  useEffect(() => {
-    
-    if (isDarkMode) {
+  
+    if (savedTheme === "true") {
       document.documentElement.classList.add("dark");
-      localStorage.setItem("darkMode", "true");
+      document.cookie = "darkMode=true; path=/"; 
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("darkMode", "false");
+      document.cookie = "darkMode=false; path=/"; 
     }
-  }, [isDarkMode]);
+  }, []); 
 
   return <>{children}</>;
 }

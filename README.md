@@ -112,4 +112,3 @@
 위 REST API 명세를 바탕으로 데이터를 호출하는 custom hook을 구현하고 /pokemons 페이지에 예시와 같이 ui를 구현합니다.
 
 ![example7](public/example7.png)
-

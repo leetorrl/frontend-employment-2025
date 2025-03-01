@@ -125,3 +125,22 @@
 .btn {
   @apply border border-blue-500 bg-blue-500 text-white px-2 py-4
 }
+
+.Group1-header{
+  @apply text-2xl font-bold m-0 p-5 text-white bg-blue-800 text-left;
+}
+.Group1-footer{
+  @apply m-0 text-center text-sm p-2 font-bold bg-blue-800 text-white;
+}
+.Group2-header{
+  @apply text-2xl font-bold m-0 p-5 text-white bg-green-600 ;
+}
+.Group2-footer{
+  @apply  m-0 text-center text-sm p-2 font-bold bg-green-600 text-white;
+}
+.Group3-header{
+  @apply text-2xl font-bold m-0 p-5 text-white bg-orange-500 ;
+}
+.Group3-footer{
+  @apply  m-0 text-center text-sm p-2 font-bold bg-orange-500 text-white;
+}
